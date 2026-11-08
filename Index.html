@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<!--
+  ============================================================
+  AD MOCKUP SCREEN  (for TikTok ads / screenshots)
+  ------------------------------------------------------------
+  HOW TO EDIT
+  1. Put your logo file (logo.png) in the SAME folder as this file.
+  2. Change the text in the "EDIT HERE" spots below
+     (service name, country, number, code).
+  3. Switch colours:  <html data-theme="dark">  ->  data-theme="light"
+  4. Open the page on your phone, or in Chrome press F12 then the
+     phone icon (device mode), and take your screenshot.
+  NOTE: no prices or balances are shown, on purpose.
+  ============================================================
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foreign Numbers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- BRAND COLOURS (change these to restyle everything) ---------- */
+    :root {
+      --brand: #e50914;
+      --brand-hover: #b80710;
+      --brand-soft: rgba(229, 9, 20, 0.12);
+      --ok: #22c55e;
+      --ok-soft: rgba(34, 197, 94, 0.14);
+      --bg: #0e0f12;
+      --card: #16181d;
+      --card-2: #1b1d23;
+      --border: #262931;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+    :root[data-theme="light"] {
+      --brand-soft: rgba(229, 9, 20, 0.08);
+      --ok: #15803d;
+      --ok-soft: #dcfce7;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --card-2: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    html, body { background: var(--bg); color: var(--text); min-height: 100vh; }
+    body { display: flex; justify-content: center; }
+
+    /* soft red glow in the background */
+    body::before {
+      content: ""; position: fixed; top: -140px; right: -120px; width: 420px; height: 420px; pointer-events: none;
+      background: radial-gradient(circle, rgba(229, 9, 20, 0.22) 0%, transparent 70%);
+    }
+
+    .app { width: 100%; max-width: 430px; min-height: 100vh; padding: 18px 20px 40px; position: relative; }
+
+    /* ---------- top bar ---------- */
+    .topbar { display: flex; align-items: center; gap: 14px; height: 72px; }
+    .icon-btn {
+      width: 44px; height: 44px; border-radius: 14px; flex: 0 0 44px;
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; color: var(--text);
+    }
+    .icon-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .logo { height: 44px; width: auto; max-width: 190px; object-fit: contain; display: block; }
+
+        <div class="icon-btn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAIN CARD ===== -->
+    <main class="card">
+
+      <div class="row">
+        <!-- SERVICE (EDIT the name; swap the icon if you like) -->
+        <span class="pill">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path d="M13.3 20v-6.6h2.2l.4-2.6h-2.6V9.2c0-.8.3-1.3 1.4-1.3h1.3V5.6c-.2 0-1-.1-1.9-.1-2 0-3.3 1.2-3.3 3.4v1.9H8.6v2.6h2.2V20z" fill="#fff"/></svg>
+          Facebook
+        </span>
+        <span class="pill done"><span class="dot"></span>Completed</span>
+      </div>
+
+      <!-- COUNTRY (EDIT HERE) -->
+      <div class="country">United States</div>
+
+      <!-- NUMBER (EDIT HERE) -->
+      <div class="number-row">
+        <div class="number" id="num">+12025550143</div>
+        <button class="copy" id="copyBtn" type="button" aria-label="Copy number">
+          <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>
+        </button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="code-label">
+        <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+        Verification code received
+      </div>
+
+      <!-- CODE (EDIT HERE) -->
+      <div class="code">482916</div>
+
+      <div class="buttons">
+        <a class="btn ghost" href="#">View in history</a>
+        <a class="btn solid" href="#">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/></svg>
+          Rent another
+        </a>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // Copy button (works when you tap it)
+    document.getElementById('copyBtn').addEventListener('click', function () {
+      var btn = this, txt = document.getElementById('num').textContent;
+      try { navigator.clipboard.writeText(txt); } catch (e) {}
+      btn.classList.add('copied');
+      setTimeout(function () { btn.classList.remove('copied'); }, 1200);
+    });
+  </script>
+</body>
+      </html>
+    
