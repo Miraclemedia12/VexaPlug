@@ -70,6 +70,89 @@
     .icon-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .logo { height: 44px; width: auto; max-width: 190px; object-fit: contain; display: block; }
 
+    /* ---------- page heading ---------- */
+    .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin: 14px 0 22px; }
+    .head h1 { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+    .head p { color: var(--muted); font-size: 0.95rem; font-weight: 500; margin-top: 6px; }
+    .head .actions { display: flex; gap: 10px; }
+
+    /* ---------- main card ---------- */
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 26px;
+      padding: 26px 22px 24px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; pointer-events: none;
+      background: radial-gradient(circle, rgba(229, 9, 20, 0.16) 0%, transparent 70%);
+    }
+
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 99px;
+      font-size: 0.92rem; font-weight: 700; background: var(--card-2); border: 1px solid var(--border);
+    }
+    .pill svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .pill.done { color: var(--ok); background: var(--ok-soft); border-color: transparent; }
+    .pill.done .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+
+    .country { text-align: center; color: var(--muted); font-size: 1rem; font-weight: 600; margin-top: 28px; position: relative; }
+
+    .number-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 10px; position: relative; }
+    .number { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.01em; }
+    .copy {
+      width: 44px; height: 44px; border-radius: 14px; flex: 0 0 44px; cursor: pointer;
+      background: var(--card-2); border: 1px solid var(--border); color: var(--text);
+      display: flex; align-items: center; justify-content: center; transition: .2s;
+    }
+    .copy:hover { border-color: var(--brand); color: var(--brand); }
+    .copy.copied { border-color: var(--ok); color: var(--ok); }
+    .copy svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .divider { height: 1px; background: var(--border); margin: 26px 0 24px; position: relative; }
+
+    .code-label { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 1rem; font-weight: 600; position: relative; }
+    .code-label svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .code { text-align: center; font-size: 3.2rem; font-weight: 800; letter-spacing: 0.14em; color: var(--brand); margin: 14px 0 26px; padding-left: 0.14em; position: relative; }
+
+    .buttons { display: flex; gap: 12px; position: relative; }
+    .btn {
+      flex: 1; border-radius: 14px; padding: 16px 10px; font-size: 1rem; font-weight: 700; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: .2s; text-decoration: none;
+    }
+    .btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn.ghost:hover { border-color: var(--brand); color: var(--brand); }
+    .btn.solid { background: var(--brand); border: 1px solid var(--brand); color: #fff; box-shadow: 0 8px 22px rgba(229, 9, 20, 0.35); }
+    .btn.solid:hover { background: var(--brand-hover); }
+
+    @media (max-width: 380px) {
+      .number { font-size: 1.55rem; }
+      .code { font-size: 2.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+
+    <!-- ===== TOP BAR ===== -->
+    <header class="topbar">
+      <div class="icon-btn" aria-label="Menu">
+        <svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </div>
+      <!-- YOUR LOGO: put logo.png next to this file -->
+      <img class="logo" src="logo.jpg" alt="" onerror="this.style.display='none'">
+    </header>
+
+    <!-- ===== PAGE HEADING ===== -->
+    <section class="head">
+      <div>
+        <h1>Foreign Numbers</h1>                       <!-- EDIT HERE -->
+        <p>Verification code received.</p>             <!-- EDIT HERE -->
+      </div>
+      <div class="actions">
+        <div class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+        </div>
         <div class="icon-btn" aria-label="Notifications">
           <svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
         </div>
@@ -130,5 +213,4 @@
     });
   </script>
 </body>
-      </html>
-    
+</html>
